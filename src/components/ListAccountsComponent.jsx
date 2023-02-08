@@ -8,7 +8,11 @@ class ListAccountsComponent extends Component {
         this.state = {
             accounts: []
         }
+        this.listBooks = this.listBooks.bind(this);
+    }
 
+    listBooks(){
+        this.props.history.push(`/books`)
     }
 
     componentDidMount(){
@@ -26,7 +30,7 @@ class ListAccountsComponent extends Component {
                         <thead>
                             <tr>
                                 <th>Indirizzo email</th>
-                                <th>login</th>
+                                <th>Login</th>
                             </tr>
 
                         </thead>
@@ -36,6 +40,9 @@ class ListAccountsComponent extends Component {
                                 account => 
                                 <tr key={account.id}>
                                   <td>{account.email}</td>
+                                  <td>
+                                    <button onClick={() => this.listBooks()}
+                                    className="btn btn-info">Select</button></td>
                                 </tr>
                               )
                             }
