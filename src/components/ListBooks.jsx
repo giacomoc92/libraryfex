@@ -3,16 +3,20 @@ import BookService from '../service/BookService';
 
 class ListBooksComponent extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
+            email: this.props.match.params.email,
             books: []
         }
     }
 
+    getBook(id){
+        this.props.history.push(`/booksDetail/${id}`)
+    }
+
     componentDidMount(){
-        let email = "sara.rizzo@email.com";
-        BookService.getBooksByEmail(email).then((res) => {
+        BookService.getBooksByEmail(this.state.email).then((res) => {
           this.setState({ books: res.data});
         });
       }
@@ -39,6 +43,7 @@ class ListBooksComponent extends Component {
                                   <td>{book.author}</td>
                                   <td>
                                     <button
+                                    onClick={() => this.getBook(book.id)}
                                     className="btn btn-info">More details</button></td>
                                 </tr>
                               )

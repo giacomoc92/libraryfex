@@ -5,6 +5,7 @@ import ListAccountsComponent from './components/ListAccountsComponent';
 import FooterComponent from './components/FooterComponent';
 import ListBooksComponent from './components/ListBooks';
 import LandingPageComponent from './components/LandingPageComponent';
+import BookDetailComponent from './components/BookDetailComponent';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
             <Switch>
               <Route path="/" exact component={LandingPageComponent}></Route>
               <Route path="/accounts" component={ListAccountsComponent}></Route>
-              <Route path="/books" component={ListBooksComponent}></Route>
+              <Route path="/books/:email" component={ListBooksComponent}></Route>
+              <Route path="/booksDetail/:id" component={BookDetailComponent}></Route>
             </Switch>
           </div>
         <FooterComponent />

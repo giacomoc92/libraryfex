@@ -14,9 +14,8 @@ class HeaderComponent extends Component {
             <div>
                 <header>
                     <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
-                    <div><a href='' className='navbar-brand'>hastega placeholder text</a></div>
+                    <div><a href='http://localhost:3000/accounts' className='navbar-brand'>Hastega Library</a></div>
                     </nav>
-
                 </header>
             </div>
         );
